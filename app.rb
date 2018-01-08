@@ -21,6 +21,10 @@ module Notifier
 end
 
 # Predefined for inline use
+
+module Actions
+end
+
 module Resources
   module Products
     module Actions
@@ -31,6 +35,9 @@ module Resources
     end
   end
 end
+
+# Base
+require './app/actions/save.rb'
 
 # Resources
 require './app/resources/products/model.rb'
