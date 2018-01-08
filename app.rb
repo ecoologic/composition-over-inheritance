@@ -1,3 +1,12 @@
+require 'date'
+
+# I'm not interested in loading active support at this point
+class Date
+  def self.current
+    today
+  end
+end
+
 # Mocks
 module Server
   def self.respond(status, body)
@@ -17,10 +26,15 @@ module Resources
     module Actions
     end
   end
+  module Discounts
+    module Actions
+    end
+  end
 end
 
-# Models
+# Resources
 require './app/resources/products/model.rb'
-
-# Controller Actions
 require './app/resources/products/actions/update.rb'
+
+require './app/resources/discounts/model.rb'
+require './app/resources/discounts/actions/create.rb'
